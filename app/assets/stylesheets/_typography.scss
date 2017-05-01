@@ -1,0 +1,161 @@
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	height: 100%;
+  overflow: scroll;
+	color: $main-color;
+	background-color: $main-background;
+	-webkit-overflow-scrolling: touch;
+}
+
+body,
+input,
+select,
+textarea {
+	font-family: $default-font-family, $default-font-style;
+	font-size: $default-font-size;
+	font-weight: $default-font-weight;
+	line-height: $default-line-height;
+}
+
+a {
+	color: $main-color;
+	-moz-transition: color 0.2s ease-in-out;
+	-webkit-transition: color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+b,
+strong {
+	font-weight: 700;
+	color: $main-color;
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	line-height: 1.5;
+	margin: 0 0 1em;
+	text-transform: uppercase;
+	color: $main-color;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0 0 0.25em;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+h3 {
+	font-size: 1.35em;
+}
+
+h4 {
+	font-size: 1.1em;
+}
+
+h5 {
+	font-size: 0.9em;
+}
+
+h6 {
+	font-size: 0.7em;
+}
+
+input,
+select,
+textarea {
+	color: $main-color;
+}
+
+@media screen and (max-width: 1680px) {
+	body,
+	input,
+	select,
+	textarea {
+		font-size: 13pt;
+	}
+}
+@media screen and (max-width: 1280px) {
+	body,
+	input,
+	select,
+	textarea {
+		font-size: 13pt;
+	}
+}
+@media screen and (max-width: 980px) {
+	body,
+	input,
+	select,
+	textarea {
+		font-size: 12pt;
+	}
+}
+@media screen and (max-width: 736px) {
+	body,
+	input,
+	select,
+	textarea {
+		font-size: 11pt;
+	}
+}
+@media screen and (max-width: 480px) {
+	body,
+	input,
+	select,
+	textarea {
+		min-width: 320px;
+		font-size: 11pt;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	h1 {
+		font-size: 1.5em;
+	}
+	h2 {
+		font-size: 1.25em;
+	}
+	h3 {
+		font-size: 1.1em;
+	}
+	h4 {
+		font-size: 1.0em;
+	}
+}

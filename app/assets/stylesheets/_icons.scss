@@ -1,0 +1,19 @@
+
+.icon {
+	text-decoration: none;
+	border-bottom: none;
+	position: relative;
+}
+
+.icon:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none !important;
+}
+
+.icon > .label {
+	display: none;
+}

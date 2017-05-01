@@ -1,0 +1,65 @@
+
+<section id="hero">
+	<div class="inner">
+		<h1>My Awesome Hero Header</h1>
+		<h3>Why Ratchet Labs is just great.</h3>
+	</div>
+</section>
+
+<section id="main">
+	<div class="inner">
+		<h2>Welcome to Ratchet Labs!</h2>
+		<div class="row">
+			<div class="4u 12u$(xsmall)">
+				<h4>TOPIC 1</h4>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+			</div>
+			<div class="4u 12u$(xsmall)">
+				<h4>TOPIC 2</h4>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+			</div>
+			<div class="4u 12u$(xsmall)">
+				<h4>TOPIC 3</h4>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="accented">
+	<div class="inner">
+		<h2>Accented Section</h2>
+		<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+
+		<p>
+			<%= form_with scope: :subscription, url: subscribe_url, html: {class: 'subscription'} do |form| %>
+  			<%= form.email_field :email, placeholder: '... your email address' %>
+				<%= submit_tag 'Subscribe', class: 'button action' %>
+			<% end %>
+		</p>
+
+	</div>
+</section>
+
+<section id="main">
+	<div class="inner">
+		<h2>Image Hover Section</h2>
+		<div class="row">
+			<div class="4u 12u$(xsmall)">
+				<ul class="image-hover">
+  				<li><%= link_to image_span_tag('pic1.png','Lorem ipsum dolor sit amet, consetetur sadipscing elitr','image-hover-span'), page_path('static') %></li>
+				</ul>
+			</div>
+			<div class="4u 12u$(xsmall)">
+				<ul class="image-hover">
+  				<li><%= link_to image_span_tag('pic2.png','Hover Text 2','image-hover-span'), page_path('static') %></li>
+				</ul>
+			</div>
+			<div class="4u 12u$(xsmall)">
+				<ul class="image-hover">
+  				<li><%= link_to image_span_tag('pic3.png','Hover Text 3','image-hover-span'), page_path('static') %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,21 @@
+<header id="header">
+  <div class="inner">
+    <div class='logo'><%= link_to image_tag('logo.png'), '/' %></div>
+    <nav id="nav">
+      <%= link_to 'Link1', page_path('static'), { class: 'link'} %>
+      <%= link_to 'Link2', page_path('static'), { class: 'link'} %>
+
+      <div class="dropdown">
+        <span class="dropdown-link">Links</span>
+        <div class="dropdown-content">
+          <%= link_to 'Link 1', page_path('static') %>
+          <%= link_to 'Link 2', page_path('static') %>
+          <%= link_to 'Link 3', page_path('static') %>
+        </div>
+      </div>
+
+      <%= link_to profile_image_tag(nil, 32), page_path('static'), { class: 'round link'} %>
+      <%= link_to 'Register Now', page_path('static'), { class: 'button action'} %>
+    </nav>
+  </div>
+</header>

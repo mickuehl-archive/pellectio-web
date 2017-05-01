@@ -1,0 +1,48 @@
+
+// typographic settings
+
+$default-font-family: "Lato" ;
+$default-font-style: sans-serif;
+$default-font-size: 14pt;
+$default-font-weight: 300;
+$default-line-height: 1.8;
+
+// Colors
+$white: #fff;
+$black: #000;
+
+$dark_blue: #2181f3;
+$blue: #009ef9;
+//$light_blue: #00c5f9;
+$light_blue: #f1f7fa;
+$blue_gray: #dbecf2;
+
+$green: #64cb4c;
+$red: #ff5b5a;
+$yellow: #fffc4a;
+
+$pink: #ff45c1;
+$purple: #8572f7;
+$bright-green: #18f6a6;
+$dark-yellow: #ffd228;
+
+$rich-black: #0c0c0c;
+$dark-gray: #4c4c4c;
+$gray: #e0e0e0;
+$light-gray: #f8f9fb;
+
+// specific colors
+$button_bkg: #e7f3ff;
+$button_txt: #188cf6;
+
+// mappings / color schemes
+
+// all black & white
+$main-color: $rich-black;
+$main-color-hover: $gray;
+
+$main-background: $white;
+$main-background-accented: $white;
+$hero-background: $white;
+$header-background: $white;
+$footer-background: $white;

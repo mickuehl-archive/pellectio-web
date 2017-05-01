@@ -1,0 +1,205 @@
+header p {
+	position: relative;
+	margin: 0 0 1.5em;
+	color: $main-color;
+}
+
+header h2 + p {
+	font-size: 1.25em;
+	margin-top: -1em;
+}
+
+header h3 + p {
+	font-size: 1.1em;
+	margin-top: -0.8em;
+}
+
+header h4 + p,
+header h5 + p,
+header h6 + p {
+	font-size: 0.9em;
+	margin-top: -0.6em;
+}
+
+#header {
+	color: $main-color;
+	background: $header-background;
+	cursor: default;
+	height: 5em;
+	left: 0;
+	text-align: right;
+	line-height: 4em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10001;
+}
+
+#header .inner {
+	max-width: 65em;
+	width: calc(100% - 6em);
+	margin: 0 auto;
+	position: relative;
+}
+
+#header .logo {
+	padding: 0;
+	margin: 0.3em 0 0;
+	color: $main-color;
+	top: 0;
+	left: 0;
+	height: inherit;
+	position: absolute;
+	line-height: inherit;
+	display: inline-block;
+	font-size: 1.75em;
+	text-transform: none;
+	font-weight: normal;
+}
+
+#header .logo:hover {
+	color: rgba(229, 71, 75, 0.75);
+}
+
+#header a,span {
+	-moz-transition: color 0.2s ease-in-out;
+	-webkit-transition: color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+	display: inline-block;
+	color: $main-color;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+#header a:hover {
+	color: $main-color-hover;
+}
+
+#header a:last-child {
+	//padding-right: 0;
+}
+
+#header a.link {
+	padding-right: 1.5em;
+}
+
+#header a.round img {
+	height: 100%;
+	border-radius: 100%;
+	vertical-align: middle;
+}
+
+#header .button,
+button {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.8em;
+	font-weight: 700;
+	height: 3.2em;
+	line-height: 3.45em;
+	padding: 0 2.25em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	border-radius: 20px;
+	background-color: transparent;
+	vertical-align: middle;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	background-color: $main-background;
+	color: $main-color !important;
+}
+
+#header .button:hover,
+button:hover {
+	background-color: $main-background;
+}
+
+#header .button.action,
+button.action {
+	background-color: $red;
+	color: $white !important;
+}
+
+/* Dropdown Button */
+
+#header .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+#header .dropdown-link {
+	border: none;
+	cursor: pointer;
+	padding-right: 1.5em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+#header .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: $main-background-accented;
+	min-width: 160px;
+	box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+#header .dropdown-content a {
+	color: $main-color;
+	padding: 0px 8px;
+	text-decoration: none;
+	text-align: left;
+	display: block;
+
+	font-weight: lighter;
+	line-height: 3em;
+}
+/* Change color of dropdown links on hover */
+#header .dropdown-content a:hover {
+	color: $main-color-hover;
+	background-color: $light-gray;
+}
+/* Show the dropdown menu on hover */
+#header .dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* header navigation*/
+#nav {
+	height: 100%;
+	line-height: 4em;
+	display: inline-block;
+	vertical-align: middle;
+}
+@media screen and (max-width: 980px) {
+	#nav {
+		display: none;
+	}
+}
+@media screen and (max-width: 480px) {
+	#header .inner {
+		max-width: 90%;
+		width: 90%;
+	}
+}
+@media screen and (max-width: 736px) {
+	#header a {
+		padding: 0 0.5em;
+	}
+}
+@media screen and (max-width: 480px) {
+	#header {
+		min-width: 320px;
+	}
+}

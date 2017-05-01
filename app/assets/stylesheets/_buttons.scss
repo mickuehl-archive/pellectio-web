@@ -1,0 +1,245 @@
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.8em;
+	font-weight: 700;
+	height: 3.2em;
+	line-height: 3.45em;
+	padding: 0 2.25em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	border-radius: 20px;
+	border: 0;
+
+	background-color: transparent;
+	vertical-align: middle;
+	outline: none;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+}
+
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	text-decoration: none;
+}
+
+.button.icon,
+button.icon,
+input[type="button"].icon,
+input[type="reset"].icon,
+input[type="submit"].icon {
+	padding-left: 1.35em;
+}
+
+.button.icon:before,
+button.icon:before,
+input[type="button"].icon:before,
+input[type="reset"].icon:before,
+input[type="submit"].icon:before {
+	margin-right: 0.5em;
+}
+
+.button.fit,
+button.fit,
+input[type="button"].fit,
+input[type="reset"].fit,
+input[type="submit"].fit {
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+}
+
+.button.small,
+button.small,
+input[type="button"].small,
+input[type="reset"].small,
+input[type="submit"].small {
+	font-size: 0.8em;
+}
+
+.button.disabled,
+.button:disabled,
+button.disabled,
+button:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="submit"].disabled,
+input[type="submit"]:disabled {
+	-moz-pointer-events: none;
+	-webkit-pointer-events: none;
+	-ms-pointer-events: none;
+	pointer-events: none;
+	opacity: 0.25;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: $main-background;
+	color: $main-color !important;
+}
+
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background-color: $main-background;
+	color: $main-color !important;
+}
+
+.button:active,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background-color: $main-background;
+	color: $main-color !important;
+}
+
+.button.special,
+button.special,
+input[type="button"].special,
+input[type="reset"].special,
+input[type="submit"].special {
+	background-color: $red;
+	color: $white !important;
+}
+
+.button.special:hover,
+button.special:hover,
+input[type="button"].special:hover,
+input[type="reset"].special:hover,
+input[type="submit"].special:hover {
+	background-color: $red;
+	color: $white !important;
+}
+
+.button.special:active,
+button.special:active,
+input[type="button"].special:active,
+input[type="reset"].special:active,
+input[type="submit"].special:active {
+	background-color: $red;
+	color: $white !important;
+}
+
+.button.special:focus,
+button.special:focus,
+input[type="button"].special:focus,
+input[type="reset"].special:focus,
+input[type="submit"].special:focus {
+	background-color: $red;
+	color: $white !important;
+}
+
+// NEW COLORS
+
+.button.danger,
+button.danger,
+input[type="button"].danger,
+input[type="reset"].danger,
+input[type="submit"].danger {
+	background-color: $red;
+	color: $white !important;
+}
+
+.button.danger:hover,
+button.danger:hover,
+input[type="button"].danger:hover,
+input[type="reset"].danger:hover,
+input[type="submit"].danger:hover {
+	background-color: $red;
+}
+
+.button.action,
+button.action,
+input[type="button"].action,
+input[type="reset"].action,
+input[type="submit"].action {
+	background-color: $blue;
+	color: $white !important;
+}
+
+.button.action:hover,
+button.action:hover,
+input[type="button"].action:hover,
+input[type="reset"].action:hover,
+input[type="submit"].action:hover {
+	background-color: $blue;
+}
+
+.button.success,
+button.success,
+input[type="button"].success,
+input[type="reset"].success,
+input[type="submit"].success {
+	background-color: $green;
+	color: $white !important;
+}
+
+.button.success:hover,
+button.success:hover,
+input[type="button"].success:hover,
+input[type="reset"].success:hover,
+input[type="submit"].success:hover {
+	background-color: $green;
+}
+
+.button.warning,
+button.warning,
+input[type="button"].warning,
+input[type="reset"].warning,
+input[type="submit"].warning {
+	background-color: $dark_yellow;
+	color: $white !important;
+}
+
+.button.warning:hover,
+button.warning:hover,
+input[type="button"].warning:hover,
+input[type="reset"].warning:hover,
+input[type="submit"].warning:hover {
+	background-color: $dark_yellow;
+}
+
+.button.work,
+button.work,
+input[type="button"].work,
+input[type="reset"].work,
+input[type="submit"].work {
+	background-color: $button_bkg;
+	color: $button_txt !important;
+}
+
+.button.work:hover,
+button.work:hover,
+input[type="button"].work:hover,
+input[type="reset"].work:hover,
+input[type="submit"].work:hover {
+	background-color: $button_bkg;
+	color: $button_txt !important;
+}
