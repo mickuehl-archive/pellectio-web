@@ -1,6 +1,6 @@
 # pellect.io web frontend
 
-TBD
+RAILS 5.1 based web-frontend for pellect.io
 
 ## Dependencies
 
