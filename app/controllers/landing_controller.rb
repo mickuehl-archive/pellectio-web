@@ -2,6 +2,22 @@
 class LandingController < ApplicationController
 
 	def index
+		@q = nil
+	end
+
+	def search
+
+		if params[:search]
+      @q = params[:search][:query]
+			q = URI.encode(@q)
+			@q = nil if @q == ''
+    else
+      @q = nil
+			q = ""
+    end
+
+		@results = SearchService.new.search_amazon q
+
 	end
 
 	def subscribe

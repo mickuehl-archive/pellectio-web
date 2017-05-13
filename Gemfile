@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0.rc2'
+gem 'rails', '~> 5.1.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -33,10 +33,14 @@ gem 'jbuilder', '~> 2.5'
 # Design, Layout and UI
 gem 'high_voltage'
 gem 'font-awesome-rails'
+gem 'simple_form'
 
 # use Foreman and Figaro to configure and run the app locally
 gem 'foreman'
 gem 'figaro'
+
+# json API etc
+gem 'excon'
 
 # asyn jobs
 gem 'sucker_punch'

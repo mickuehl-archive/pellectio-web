@@ -79,8 +79,8 @@ Deploy the application
 	gem install bundler --no-document
 	gem install nokogiri -- --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/libxml2 --use-system-libraries --no-document
 
-#### RAILS 5.1 (RC2)
+#### RAILS 5.1
 
-	gem install rails -v 5.1.0.rc2 --no-document
+	gem install rails -v 5.1.0 --no-document
 
 	rails new saas-starter-app --webpack=react --skip-turbolinks --no-rc --database=postgresql
