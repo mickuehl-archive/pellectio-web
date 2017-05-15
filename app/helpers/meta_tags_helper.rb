@@ -14,8 +14,9 @@ module MetaTagsHelper
 	end
 
 	def fb_meta_tags(item)
-		affiliate_url = "https://www.amazon.de/dp/#{item[:id]}/?tag=#{ENV['amzn_partner_id']}"
-		og_html affiliate_url, 'article', item[:title], item[:images][0]['url'], item[:summary]
+		#affiliate_url = "https://www.amazon.de/dp/#{item[:id]}/?tag=#{ENV['amzn_partner_id']}"
+		url = "#{ENV['base_url']}/a/#{item[:details]['region']}/#{item[:id]}"
+		og_html url, 'article', item[:title], item[:images][0]['url'], item[:summary]
 	end
 
 end
