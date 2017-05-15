@@ -19,12 +19,16 @@ class ItemsController < ApplicationController
 		asin = params[:asin]
 
 		if user_agent.start_with? 'facebook'
-			affiliate_url = "#{ENV['base_url']}/i/#{region}/#{asin}"
+			#affiliate_url = "#{ENV['base_url']}/i/#{region}/#{asin}"
+			@results = ItemService.new.lookup asin, region
+			@related = @results[0][:details]['related_products']
+			@features = @results[0][:details]['feature']
+
+			render :show
 		else
 			affiliate_url = "https://www.amazon.de/dp/#{asin}/?tag=#{ENV['amzn_partner_id']}"
+			redirect_to affiliate_url
 		end
-
-		redirect_to affiliate_url
 
 	end
 
