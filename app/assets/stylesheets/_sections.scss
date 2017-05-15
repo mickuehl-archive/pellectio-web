@@ -35,9 +35,12 @@ section .inner {
 	margin-bottom: 0.5em;
 }
 
-#accented {
-	padding: 1em 0 1em;
-	background: $main-background-accented;
+#results {
+	padding: 1.5em 0 3em 1em;
+}
+
+#details {
+	padding: 1.5em 0 3em 1em;
 }
 
 @media screen and (max-width: 480px) {

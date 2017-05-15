@@ -1,24 +1,5 @@
 
-<section id="hero">
-	<div class="inner">
-		<h1>pellect.io</h1>
-		<h3>Read a fine book every day.</h3>
-	</div>
-</section>
-
-<section id="one">
-	<div class="inner">
-		<%= simple_form_for :search, :url => '/s' do |f| %>
-			<% if @q %>
-				<%= f.input :query, label: false, placeholder: "#{@q}" %>
-			<% else %>
-				<%= f.input :query, label: false, placeholder: 'Search a book' %>
-			<% end %>
-		<% end %>
-	</div>
-</section>
-
-<section id="one">
+<section id="results">
 	<div class="inner">
 		<%= render :partial => "result", :collection => @results %>
 	</div>

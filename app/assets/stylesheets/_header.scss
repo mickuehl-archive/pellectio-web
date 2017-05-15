@@ -175,6 +175,24 @@ button.action {
 	display: block;
 }
 
+/* search bar */
+#header .search {
+	position: absolute;
+	padding-left: 90px;
+	height: 100%;
+	vertical-align: middle;
+}
+
+#header .search img {
+	height: 100%;
+	vertical-align: middle;
+}
+
+#header form {
+	width: 22em;
+	padding: 0.7em 1em 0;
+}
+
 /* header navigation*/
 #nav {
 	height: 100%;
