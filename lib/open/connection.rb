@@ -1,7 +1,7 @@
 
-require 'pellectio/errors'
+require 'open/errors'
 
-module Pellectio
+module OpenSaas
 
   class Connection
 
@@ -68,7 +68,7 @@ module Pellectio
     end
 
     def to_s
-      "Pellectio::Connection { :url => #{url}, :options => #{options} }"
+      "OpenSaas::Connection { :url => #{url}, :options => #{options} }"
     end
 
   private
@@ -80,7 +80,7 @@ module Pellectio
       opts ||= {}
       headers = opts.delete(:headers) || {}
       content_type = 'application/json'
-      user_agent = "Pellectio/API"
+      user_agent = "open_saas/api"
 
       {
         :method        => http_method,

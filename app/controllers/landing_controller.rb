@@ -1,4 +1,6 @@
 
+require 'open/open'
+
 class LandingController < ApplicationController
 
 	def index
@@ -9,14 +11,14 @@ class LandingController < ApplicationController
 
 		if params[:search]
       @q = params[:search][:query]
-			q = URI.encode(@q)
+			q = URI.encode( cleanup_query(@q))
 			@q = nil if @q == ''
     else
       @q = nil
 			q = ""
     end
 
-		@results = SearchService.new.search_amazon q
+		@results = OpenSaas::SearchService.new.search q, {region: 'DE', p: 1}
 
 	end
 
@@ -37,6 +39,13 @@ class LandingController < ApplicationController
 		end
 
 		redirect_to root_path
+	end
+
+private
+
+	def cleanup_query(s)
+		s.gsub!(' ','+')
+		s
 	end
 
 end
