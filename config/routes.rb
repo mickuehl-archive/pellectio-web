@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   # landing page simple search
   get '/s', :to => 'landing#search'
   post '/s', :to => 'landing#search'
-  
+
+  # retrieve and display an item
+  get '/i/:region/:asin', :to => 'items#show'
+
+  # subscribe to the email list
   post 'subscribe', to: 'landing#subscribe'
   direct :subscribe do
     { controller: 'landing', action: 'subscribe' }

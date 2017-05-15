@@ -1,0 +1,16 @@
+
+<section id="hero">
+	<div class="inner">
+		<h1>pellect.io</h1>
+		<h3>Read a fine book every day.</h3>
+	</div>
+</section>
+
+<section id="one">
+	<div class="inner">
+		<h3><%= @results[0][:title] %></h3>
+		<p><%= @results[0][:summary] %></p>
+		<p><%= @results[0][:details]['review'] %></p>
+		<%= render :partial => "related", :collection => @related %>
+	</div>
+</section>

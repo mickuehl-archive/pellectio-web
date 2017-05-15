@@ -1,7 +1,7 @@
 
 require 'open/open'
 
-class SearchService
+class ItemService
 
 	attr_reader :connection
 	attr_reader :search_uri
@@ -10,14 +10,9 @@ class SearchService
 		@connection = OpenSaas::Connection.new(ENV['backend_api_url'], {})
 	end
 
-	def search(query, opts = {})
+	def lookup(asin, region)
 
-		params = ""
-		opts.each do |n,v|
-			params << "&#{n}=#{v}"
-		end
-
-		response = @connection.get("/api/amzn/search?q=#{query}#{params}", {}, :body => nil)
+		response = @connection.get("api/amzn/lookup/#{region}/#{asin}", {}, :body => nil)
 
 		finalize_results response
 
