@@ -13,35 +13,28 @@ module OpenSaas
 		end
 
 		def search(query, opts = {})
-			results = []
 
 			params = ""
 			opts.each do |n,v|
 				params << "&#{n}=#{v}"
 			end
 
-			result = @connection.get("#{@search_uri}?q=#{query}#{params}", {}, :body => nil)
+			response = @connection.get("#{@search_uri}?q=#{query}#{params}", {}, :body => nil)
 
-			result.each do |r|
-				item = {
-					id: r['asin'],
-					title: r['title'],
-					summary: r['summary'],
-					relevance: 1.0,
-					images: r['images'],
-				}
-				r.delete('images')
+			finalize_results response
 
-				details = {}
-				r.each do |k,v|
-					details[k] = v
-				end
-				item[:details] = details
+		end
 
-				results << item
+protected
+
+		def finalize_results(response)
+			results = []
+
+			response.each do |r|
+				results << r
 			end
 
-			return results
+			results
 		end
 
 	end

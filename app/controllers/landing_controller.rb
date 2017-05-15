@@ -1,6 +1,4 @@
 
-require 'open/open'
-
 class LandingController < ApplicationController
 
 	def index
@@ -18,7 +16,7 @@ class LandingController < ApplicationController
 			q = ""
     end
 
-		@results = OpenSaas::SearchService.new.search q, {region: 'DE', p: 1}
+		@results = SearchService.new.search q, {region: 'DE', p: 1}
 
 	end
 
