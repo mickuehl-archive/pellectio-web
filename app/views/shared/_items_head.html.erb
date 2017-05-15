@@ -1,0 +1,12 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : application_description %>">
+
+	<title><%= content_for?(:title) ? yield(:title) : application_name %></title>
+
+	<%= csrf_meta_tags %>
+	<%= fb_meta_tags @results[0] %>
+
+	<%= stylesheet_link_tag 'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+</head>

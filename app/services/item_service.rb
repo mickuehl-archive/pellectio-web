@@ -12,9 +12,12 @@ class ItemService
 
 	def lookup(asin, region)
 
-		response = @connection.get("api/amzn/lookup/#{region}/#{asin}", {}, :body => nil)
-
-		finalize_results response
+		begin
+			response = @connection.get("api/amzn/lookup/#{region}/#{asin}", {}, :body => nil)
+			finalize_results response
+		rescue => e
+			[]
+		end
 
 	end
 

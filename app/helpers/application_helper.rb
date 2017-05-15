@@ -1,6 +1,8 @@
 
 module ApplicationHelper
 
+	include MetaTagsHelper
+	
 	def application_name
     ENV['app_name']
   end

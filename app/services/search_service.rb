@@ -17,9 +17,12 @@ class SearchService
 			params << "&#{n}=#{v}"
 		end
 
-		response = @connection.get("/api/amzn/search?q=#{query}#{params}", {}, :body => nil)
-
-		finalize_results response
+		begin
+			response = @connection.get("/api/amzn/search?q=#{query}#{params}", {}, :body => nil)
+			finalize_results response
+		rescue => e
+			[]
+		end
 
 	end
 
