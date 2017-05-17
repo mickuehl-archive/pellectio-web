@@ -13,12 +13,9 @@ section .inner {
 	min-height: 30vh;
 	padding: 1.5em 0 3em 0;
 	background: $hero-background;
-	//background-image: url( asset_path('hero.png'));
-	//background-repeat: no-repeat;
-	//background-position: center center;
 }
 
-#hero h1,h3,h4 {
+#hero h1,h2,h3,h4 {
 	color: $main-color;
 }
 
@@ -31,16 +28,56 @@ section .inner {
 	margin-bottom: 0.5em;
 }
 
-#hero h4 {
-	margin-bottom: 0.5em;
-}
-
 #results {
 	padding: 1.5em 0 3em 1em;
 }
 
-#details {
+#results h1,h2,h3,h4 {
+	color: $main-color;
+}
+
+#item {
 	padding: 1.5em 0 3em 1em;
+}
+
+#item h1,h2,h3,h4 {
+	color: $main-color;
+}
+
+#item .description {
+	margin: 0 0 1em 0;
+}
+
+#item .details {
+	margin: 0 0 1em 0;
+}
+
+#item .details p {
+	margin: 0 0 0.5em 0;
+}
+
+#item .features {
+	font-size: 0.9em;
+	margin: 0 0 1em 0;
+}
+
+#item ul.features {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
+
+#item ul.features li {
+	padding: 0 0 0 0.1em;
+	vertical-align: middle;
+}
+
+#item ul.features li:last-child {
+	padding-right: 0;
+}
+
+#item .related {
+	margin: 2em 0 0 0;
 }
 
 @media screen and (max-width: 480px) {

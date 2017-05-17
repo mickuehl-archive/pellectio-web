@@ -1,12 +1,41 @@
 <% content_for :title do %><%= "#{@results[0][:title]} - #{application_name}" %><% end %>
 <% content_for :description do %><%= "#{@results[0][:summary]}" %><% end %>
 
-<section id="details">
+<section id="item">
 	<div class="inner">
-		<h3><%= @results[0][:title] %></h3>
-		<p><%= @results[0][:summary] %></p>
-		<p><%= @results[0][:details]['review'] %></p>
-		<%= render :partial => "feature", :collection => @features %>
-		<%= render :partial => "related", :collection => @related %>
+
+		<div class="description">
+			<h3><%= @results[0][:title] %></h3>
+			<p><%= @results[0][:summary] %></p>
+			<p><%= @results[0][:details]['review'] %></p>
+		</div>
+
+		<div class="details">
+			<p>
+			<% if @results[0][:details]['price'] == 0 %>
+			FREE
+			<% else %>
+				<%= @results[0][:details]['formatted_price'] %>
+			<% end %>
+			<% if @results[0][:details]['sales_rank'] != 0 %>
+			(Sales Rank <%= @results[0][:details]['sales_rank'] %>)
+			<% end %>
+			<br>
+			Category: <%= @results[0][:details]['group'] %>
+
+			</p>
+			<%= link_to "View on Amazon", "/a/DE/#{@results[0][:id]}", { :class => "button action"} %>
+		</div>
+
+		<div class="features">
+			<ul class="features">
+				<%= render :partial => "feature", :collection => @features %>
+			</ul>
+		</div>
+
+		<div class="related">
+			<%= render :partial => "related", :collection => @related %>
+		</div>
+
 	</div>
 </section>
