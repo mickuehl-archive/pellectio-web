@@ -20,4 +20,7 @@ Rails.application.routes.draw do
     { controller: 'landing', action: 'subscribe' }
   end
 
+  # support for legacy routes
+  get '/home', :to => 'landing#index'
+
 end
