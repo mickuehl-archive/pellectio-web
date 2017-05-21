@@ -42,7 +42,7 @@ class LandingController < ApplicationController
 private
 
 	def cleanup_query(s)
-		s.gsub!(' ','+')
+		s.gsub!(' ','_')
 		s
 	end
 
