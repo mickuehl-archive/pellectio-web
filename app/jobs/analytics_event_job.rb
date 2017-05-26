@@ -6,6 +6,8 @@ class AnalyticsEventJob
 
   def perform(propertyId, category, action, label, value, uuid, user_agent, remote_addr)
 
+    return if !Rails.env.production?
+    
     begin
 
       payload = {

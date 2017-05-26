@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
 	def show
 		@region = params[:region]
 		@asin = params[:asin]
-puts "+++ #{request.env['HTTP_USER_AGENT']}"
-puts "+++ #{request.env['REMOTE_ADDR']}"
+
 		@results = ItemService.new.lookup @asin, @region
 		if @results.empty?
 			redirect_to root_path
@@ -22,20 +21,31 @@ puts "+++ #{request.env['REMOTE_ADDR']}"
 		region = params[:region]
 		asin = params[:asin]
 
-		if user_agent.start_with? 'facebook'
-			# do not redirect, its FB scraping !
-			@results = ItemService.new.lookup asin, region
+		@results = ItemService.new.lookup asin, region
+
+		if is_web_crawler? user_agent
+			# do not redirect, its FB, LinkedIn etc scraping !
 			@related = @results[0][:details]['related_products']
 			@features = @results[0][:details]['feature']
 
 			render :show
 		else
+			AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results[0][:details]['price'] / 100, session.id, user_agent, remote_addr)
+
 			affiliate_url = "https://www.amazon.de/dp/#{asin}/?tag=#{ENV['amzn_partner_id']}"
 			redirect_to affiliate_url
-
-			AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", 1, session.id, user_agent, remote_addr)
 		end
 
+	end
+
+private
+
+	#  LinkedInBot/1.0
+	# facebookexternalhit/1.1
+	def is_web_crawler?(user_agent)
+		return true if user_agent.start_with? 'facebook'
+		return true if user_agent.start_with? 'LinkedInBot'
+		false
 	end
 
 end
