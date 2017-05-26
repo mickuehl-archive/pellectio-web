@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
 	def show
 		@region = params[:region]
 		@asin = params[:asin]
-
+puts "+++ #{request.env['HTTP_USER_AGENT']}"
+puts "+++ #{request.env['REMOTE_ADDR']}"
 		@results = ItemService.new.lookup @asin, @region
 		if @results.empty?
 			redirect_to root_path
