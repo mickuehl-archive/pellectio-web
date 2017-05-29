@@ -9,8 +9,7 @@ class ItemsController < ApplicationController
 		if @results.empty?
 			redirect_to root_path
 		else
-			@related = @results[0][:details]['related_products']
-			@features = @results[0][:details]['feature']
+			@related = @results['related']
 		end
 
 	end
@@ -25,12 +24,10 @@ class ItemsController < ApplicationController
 
 		if is_web_crawler? user_agent
 			# do not redirect, its FB, LinkedIn etc scraping !
-			@related = @results[0][:details]['related_products']
-			@features = @results[0][:details]['feature']
-
+			@related = @results['related']
 			render :show
 		else
-			AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results[0][:details]['price'] / 100, session.id, user_agent, remote_addr)
+			AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results['price'] / 100, session.id, user_agent, remote_addr)
 
 			affiliate_url = "https://www.amazon.de/dp/#{asin}/?tag=#{ENV['amzn_partner_id']}"
 			redirect_to affiliate_url

@@ -5,7 +5,7 @@
 	<title><%= content_for?(:title) ? yield(:title) : application_name %></title>
 
 	<%= csrf_meta_tags %>
-	<%= fb_meta_tags @results[0] %>
+	<%= fb_meta_tags @results %>
 
 	<%= stylesheet_link_tag 'application', media: 'all' %>
 	<%= javascript_include_tag 'application' %>

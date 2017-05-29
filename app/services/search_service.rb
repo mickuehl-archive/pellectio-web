@@ -7,7 +7,7 @@ class SearchService
 	attr_reader :search_uri
 
 	def initialize
-		@connection = OpenSaas::Connection.new(ENV['backend_api_url'], {})
+		@connection = OpenSaas::Connection.new(ENV['amazon_api_url'], {})
 	end
 
 	def search(query, opts = {})
@@ -18,7 +18,7 @@ class SearchService
 		end
 
 		begin
-			response = @connection.get("/api/amzn/search?q=#{query}#{params}", {}, :body => nil)
+			response = @connection.get("/amzn/search?q=#{query}#{params}", {}, :body => nil)
 			finalize_results response
 		rescue => e
 			[]

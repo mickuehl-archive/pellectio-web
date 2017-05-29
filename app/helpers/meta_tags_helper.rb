@@ -8,17 +8,19 @@ module MetaTagsHelper
 			<meta property='og:type' content='#{type}' />
 			<meta property='og:title' content='#{title}' />
 			<meta property='og:description' content='#{description}' />
-			<meta property='og:image' content='#{image['url']}' />
-			<meta property='og:image:width' content='#{image['width']}' />
-			<meta property='og:image:height' content='#{image['height']}' />
+			<meta property='og:image' content='#{image}' />
 		EOF
 		og.html_safe
 	end
 
+	# FIXME
+	#<meta property='og:image:width' content='#{image['width']}' />
+	#<meta property='og:image:height' content='#{image['height']}' />
+
 	def fb_meta_tags(item)
 		#affiliate_url = "https://www.amazon.de/dp/#{item[:id]}/?tag=#{ENV['amzn_partner_id']}"
-		url = "#{ENV['base_url']}/a/#{item[:details]['region']}/#{item[:id]}"
-		og_html url, 'book', item[:title], item[:summary], item[:images][1]
+		url = "#{ENV['base_url']}/a/#{item['region']}/#{item['asin']}"
+		og_html url, 'book', item['title'], item['summary'], item['image_url']
 	end
 
 end

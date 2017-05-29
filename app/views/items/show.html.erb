@@ -1,36 +1,30 @@
-<% content_for :title do %><%= "#{@results[0][:title]} - #{application_name}" %><% end %>
-<% content_for :description do %><%= "#{@results[0][:summary]}" %><% end %>
+<% content_for :title do %><%= "#{@results['title']} - #{application_name}" %><% end %>
+<% content_for :description do %><%= "#{@results['summary']}" %><% end %>
 
 <section id="item">
 	<div class="inner">
 
 		<div class="description">
-			<h3><%= @results[0][:title] %></h3>
-			<p><%= @results[0][:summary] %></p>
-			<p><%= @results[0][:details]['review'] %></p>
+			<h3><%= @results['title'] %></h3>
+			<p><%= @results['summary'] %></p>
+			<p><%= @results['review'] %></p>
 		</div>
 
 		<div class="details">
 			<p>
-			<% if @results[0][:details]['price'] == 0 %>
+			<% if @results['price'] == 0 %>
 			FREE
 			<% else %>
-				<%= @results[0][:details]['formatted_price'] %>
+				<%= @results['formatted_price'] %>
 			<% end %>
-			<% if @results[0][:details]['sales_rank'] != 0 %>
-			(Sales Rank <%= @results[0][:details]['sales_rank'] %>)
+			<% if @results['sales_rank'] != 0 %>
+			(Sales Rank <%= @results['sales_rank'] %>)
 			<% end %>
 			<br>
-			Category: <%= @results[0][:details]['group'] %>
+			Category: <%= @results['group'] %>
 
 			</p>
-			<%= link_to "More Info ...", "/a/DE/#{@results[0][:id]}", { :class => "button action"} %>
-		</div>
-
-		<div class="features">
-			<ul class="features">
-				<%= render :partial => "feature", :collection => @features %>
-			</ul>
+			<%= link_to "More Info ...", "/a/DE/#{@results['asin']}", { :class => "button action"} %>
 		</div>
 
 		<div class="related">
