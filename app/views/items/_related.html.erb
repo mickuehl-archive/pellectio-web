@@ -1,2 +1,1 @@
-
-<b><%= link_to related['asin'], "/i/DE/#{related['asin']}", method: :get %></b>
+<%= link_to book_image_tag(related['image'], related['title']), "/i/#{related['region']}/#{related['asin']}" %>
