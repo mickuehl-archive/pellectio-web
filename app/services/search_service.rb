@@ -4,7 +4,6 @@ require 'open/open'
 class SearchService
 
 	attr_reader :connection
-	attr_reader :search_uri
 
 	def initialize
 		@connection = OpenSaas::Connection.new(ENV['amazon_api_url'], {})
@@ -19,7 +18,7 @@ class SearchService
 
 		begin
 			response = @connection.get("/amzn/search?q=#{query}#{params}", {}, :body => nil)
-			finalize_results response
+			finalize_response response
 		rescue => e
 			[]
 		end
@@ -38,7 +37,7 @@ protected
 	#   details: { a: 'A', b: 'B'}
 	# }
 	#
-	def finalize_results(response)
+	def finalize_response(response)
 		results = []
 
 		response.each do |r|
