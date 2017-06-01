@@ -1,1 +1,5 @@
-<%= link_to book_image_tag(feed['image'], feed['title']), "/i/#{feed['region']}/#{feed['asin']}", target: "_blank", method: :get %>
+<div class="2u">
+	<div class="image fit">
+		<%= link_to book_image_tag(feed['image'], feed['title']), "/i/#{feed['region']}/#{feed['asin']}", target: "_blank", method: :get %>
+	</div>
+</div>

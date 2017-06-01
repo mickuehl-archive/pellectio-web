@@ -1,0 +1,18 @@
+<header id="header">
+  <div class="inner">
+
+    <div class='search'>
+
+      <div class='logo'><%= link_to image_tag('logo.png'), '/' %></div>
+
+      <%= simple_form_for :search, :url => '/s' do |f| %>
+  			<% if @q %>
+  				<%= f.input :query, label: false, placeholder: "#{@q}" %>
+  			<% else %>
+  				<%= f.input :query, label: false, placeholder: 'Search a book' %>
+  			<% end %>
+  		<% end %>
+    </div>
+
+  </div>
+</header>

@@ -11,6 +11,17 @@
 	display: block;
 }
 
+.image.fit {
+	display: block;
+	margin: 0;
+	//background: $blue-gray;
+}
+
+.image.fit img {
+
+	//width: 100%;
+}
+
 ul.image-hover {
 	list-style-type: none;
   margin: 0;
@@ -34,7 +45,7 @@ span.image-hover-span {
   cursor: pointer;
   display: table;
   position: absolute;
-	padding-top: 1em; 
+	padding-top: 1em;
 	font-weight: lighter;
 	font-size: 0.8em;
 
