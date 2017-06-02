@@ -4,10 +4,6 @@ Rails.application.routes.draw do
 	# it all starts here
   root to: 'landing#index'
 
-  # landing page simple search
-  get '/s', :to => 'landing#search'
-  post '/s', :to => 'landing#search'
-
   # retrieve and display an item
   get '/i/:region/:asin', :to => 'items#show'
 
