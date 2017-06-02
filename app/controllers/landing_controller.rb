@@ -3,22 +3,7 @@ class LandingController < ApplicationController
 
 	def index
 		@q = nil
-		@feed = FeedService.new.feed('book',1,30)
-	end
-
-	def search
-
-		if params[:search]
-      @q = params[:search][:query]
-			q = URI.encode( cleanup_query(@q))
-			@q = nil if @q == ''
-    else
-      @q = nil
-			q = ""
-    end
-
-		@results = SearchService.new.search q, {region: 'DE', p: 1}
-
+		@feed = FeedService.new.feed('book',1,18)
 	end
 
 	def subscribe
@@ -38,13 +23,6 @@ class LandingController < ApplicationController
 		end
 
 		redirect_to root_path
-	end
-
-private
-
-	def cleanup_query(s)
-		s.gsub!(' ','_')
-		s
 	end
 
 end
