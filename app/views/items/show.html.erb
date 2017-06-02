@@ -20,9 +20,8 @@
 			<% if @results['sales_rank'] != 0 %>
 			(Sales Rank <%= @results['sales_rank'] %>)
 			<% end %>
-			
 			</p>
-			<%= link_to "More Info ...", "/a/DE/#{@results['asin']}", { :class => "button action"} %>
+			<%= link_to "More Info ...", @affiliate_link, { :class => "button action"} %>
 		</div>
 
 		<div class="related">

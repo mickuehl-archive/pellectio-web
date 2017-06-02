@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 		if @results.empty?
 			redirect_to root_path
 		else
+			@affiliate_link = "#{ENV['base_url']}/a/#{@region}/#{@asin}"
 			@related = @results['related']
 		end
 

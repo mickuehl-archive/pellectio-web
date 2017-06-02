@@ -27,8 +27,8 @@ section .inner {
 }
 
 #header h1 {
-	font-size: 2.2em;
-	line-height: 2.2em;
+	font-size: 2.0em;
+	line-height: 2.0em;
 }
 
 #header h3 {
@@ -36,15 +36,19 @@ section .inner {
 }
 
 #feed {
-	padding: 3em 0 3em 1em;
+	padding: 0 0 3em 1em;
 }
 
 #feed .inner {
 	//width: 800;
 }
 
+#feed h3 {
+	padding-bottom: 0.8em;
+}
+
 #item {
-	padding: 3em 0 0 0;
+	padding: 0;
 }
 
 #item h1,h2,h3,h4 {
