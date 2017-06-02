@@ -35,12 +35,8 @@ section .inner {
 	font-size: 1.2em;
 }
 
-#main {
-	padding: 1em 0 1em;
-}
-
 #feed {
-	padding: 3em 0 3em 0;
+	padding: 3em 0 3em 1em;
 }
 
 #feed .inner {
@@ -48,7 +44,7 @@ section .inner {
 }
 
 #item {
-	padding: 3em 0 3em 0;
+	padding: 3em 0 0 0;
 }
 
 #item h1,h2,h3,h4 {
@@ -56,39 +52,20 @@ section .inner {
 }
 
 #item .description {
-	margin: 0 0 1em 0;
+	padding: 0 0.6em 0 0.6em;
 }
 
 #item .details {
-	margin: 0 0 1em 0;
+	padding: 0 0.6em 0 0.6em;
 }
 
 #item .details p {
-	margin: 0 0 0.5em 0;
-}
-
-#item .features {
-	font-size: 0.9em;
-	margin: 0 0 1em 0;
-}
-
-#item ul.features {
-	cursor: default;
-	list-style: none;
-	padding-left: 0;
-}
-
-#item ul.features li {
-	padding: 0 0 0 0.1em;
-	vertical-align: middle;
-}
-
-#item ul.features li:last-child {
-	padding-right: 0;
+	//margin: 0 0 0.5em 0;
 }
 
 #item .related {
 	margin: 2em 0 0 0;
+	padding: 0 0.8em 0 0.8em;
 }
 
 @media screen and (max-width: 480px) {

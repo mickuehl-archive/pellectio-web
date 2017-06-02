@@ -20,15 +20,15 @@
 			<% if @results['sales_rank'] != 0 %>
 			(Sales Rank <%= @results['sales_rank'] %>)
 			<% end %>
-			<br>
-			Category: <%= @results['group'] %>
-
+			
 			</p>
 			<%= link_to "More Info ...", "/a/DE/#{@results['asin']}", { :class => "button action"} %>
 		</div>
 
 		<div class="related">
-			<%= render :partial => "related", :collection => @related %>
+			<div class="row 50% uniform">
+				<%= render :partial => "related", :collection => @related %>
+			</div>
 		</div>
 
 	</div>
