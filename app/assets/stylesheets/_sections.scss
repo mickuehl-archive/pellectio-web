@@ -72,9 +72,26 @@ section .inner {
 	padding: 0 0.8em 0 0.8em;
 }
 
+@media screen and (max-width: 736px) {
+	section .inner {
+		width: 588px;
+	}
+
+	#header .inner {
+		width: 588px;
+	}
+}
+
 @media screen and (max-width: 480px) {
 	section .inner {
-		max-width: 90%;
-		width: 90%;
+		width: 384px;
+	}
+
+	#header .inner {
+		width: 384px;
+	}
+
+	#feed .inner {
+		width: 384px;
 	}
 }
