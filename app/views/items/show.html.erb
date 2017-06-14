@@ -12,6 +12,7 @@
 
 		<div class="details">
 
+			<p>
 			<% if @results['price'] == 0 %>
 			FREE
 			<% else %>
@@ -23,8 +24,10 @@
 			- Sales Rank <%= @results['sales_rank'] %>
 			<% end %>
 			)
+			</p>
 
 			<%= link_to "More Info ...", @affiliate_link, { :class => "button action"} %>
+
 		</div>
 
 		<div class="related">
