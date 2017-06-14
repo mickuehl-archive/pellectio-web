@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     { controller: 'landing', action: 'subscribe' }
   end
 
+  # sitemap.xml
+  get 'sitemap.txt', :to => 'sitemap#index'
+
   # support for legacy routes
   get '/home', :to => 'landing#index'
 
