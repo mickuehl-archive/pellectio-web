@@ -11,16 +11,19 @@
 		</div>
 
 		<div class="details">
-			<p>
+
 			<% if @results['price'] == 0 %>
 			FREE
 			<% else %>
 				<%= @results['formatted_price'] %>
 			<% end %>
+
+			(#<%= @results['asin'] %>
 			<% if @results['sales_rank'] != 0 %>
-			(Sales Rank <%= @results['sales_rank'] %>)
+			- Sales Rank <%= @results['sales_rank'] %>
 			<% end %>
-			</p>
+			)
+
 			<%= link_to "More Info ...", @affiliate_link, { :class => "button action"} %>
 		</div>
 
