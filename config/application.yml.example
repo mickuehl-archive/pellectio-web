@@ -1,16 +1,6 @@
 # Add configuration values here, as shown below.
-#
-# pusher_app_id: "2954"
-# pusher_key: 7381a978f7dd7f9a1117
-# pusher_secret: abdc3b896a0ffb85d373
-# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
-# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
-#
-# production:
-#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
-#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-base_url: localhost:3000
+base_url: http://localhost:5000
 domain_name: example.com
 app_name: 'short_name'
 app_description: 'description of the app'
@@ -23,7 +13,11 @@ admin_email: admin@example.com
 admin_password: changeme
 mailchimp_api_key: 12345
 mailchimp_list_id: 67890
-secret_key_base: 090ff9cb13044c52f907aafd09417903d1743c833f915847cd472ca0b1ad9b0s43cd9584ab3a1a6ed958ac8f1e2dab4ecb977f4b801929144816170dea1ddffc
+ga_property_id: 'UA-xxx-1'
+
+development:
+  secret_key_base: 090ff9cb13044c52f907aafd09417903d1743c833f915847cd472ca0b1ad9b0s43cd9584ab3a1a6ed958ac8f1e2dab4ecb977f4b801929144816170dea1ddffc
 
 production:
-  base_url: saas-starter-app.herokuapp.com
+  base_url: https://saas-starter-app.herokuapp.com
+  secret_key_base: 090ff9cb13044c52f907aafd09417903d4743c533a915847cd472ca0b1ad9b0s43cd9584ab3a1a6ed958ac8f1e2dab4ecb977f4b801929144816170dea1ddffc
