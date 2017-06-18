@@ -41,6 +41,7 @@ private
 	#  LinkedInBot/1.0
 	# facebookexternalhit/1.1
 	def is_web_crawler?(user_agent)
+		puts "User-Agent: '#{user_agent}'"
 		return true if user_agent.start_with? 'facebook'
 		return true if user_agent.start_with? 'LinkedInBot'
 		false
