@@ -12,7 +12,7 @@ class FeedService
 	def feed(feed, page, size)
 
 		begin
-			response = @connection.get("/feed?p=#{page}&s=#{size}", {}, :body => nil)
+			response = @connection.get("/feed?s=book&p=#{page}&n=#{size}", {}, :body => nil)
 			#finalize_response response
 			return response
 		rescue => e
