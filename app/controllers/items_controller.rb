@@ -28,7 +28,9 @@ class ItemsController < ApplicationController
 			@related = @results['related']
 			render :show
 		else
-			AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results['price'] / 100, session.id, user_agent, remote_addr)
+			if Rails.env.production?
+				AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results['price'] / 100, session.id, user_agent, remote_addr)
+			end
 
 			affiliate_url = "https://www.amazon.de/dp/#{asin}/?tag=#{ENV['amzn_partner_id']}"
 			redirect_to affiliate_url
@@ -41,7 +43,6 @@ private
 	#  LinkedInBot/1.0
 	# facebookexternalhit/1.1
 	def is_web_crawler?(user_agent)
-		puts "User-Agent: '#{user_agent}'"
 		return true if user_agent.start_with? 'facebook'
 		return true if user_agent.start_with? 'LinkedInBot'
 		false
