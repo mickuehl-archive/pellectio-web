@@ -80,7 +80,7 @@ module OpenSaas
       opts ||= {}
       headers = opts.delete(:headers) || {}
       content_type = 'application/json'
-      user_agent = "open_saas/api"
+      user_agent = "pellectio/api"
 
       {
         :method        => http_method,
