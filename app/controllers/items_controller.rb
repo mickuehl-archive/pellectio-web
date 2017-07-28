@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 			#	AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results['price'] / 100, session.id, user_agent, remote_addr)
 			#end
 
-			affiliate_url = "#{ENV['backend_api_url']}/a/#{region}/#{asin}"
+			affiliate_url = "#{ENV['backend_api_url']}/a/#{region}/#{asin}?s=wb"
 			redirect_to affiliate_url
 		end
 
