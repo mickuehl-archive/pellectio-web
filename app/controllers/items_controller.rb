@@ -19,6 +19,8 @@ class ItemsController < ApplicationController
 		user_agent = request.env['HTTP_USER_AGENT']
 		remote_addr = request.env['REMOTE_ADDR']
 		
+		puts "user_agent=#{user_agent}, remote_addr=#{remote_addr}"
+
 		region = params[:region]
 		asin = params[:asin]
 		source = params[:s]
@@ -31,10 +33,6 @@ class ItemsController < ApplicationController
 			@related = @results['related']
 			render :show
 		else
-			#if Rails.env.production?
-			#	AnalyticsEventJob.perform_async(ENV['ga_property_id'], 'affiliate', 'redirect', "#{region}/#{asin}", @results['price'] / 100, session.id, user_agent, remote_addr)
-			#end
-
 			affiliate_url = "#{ENV['backend_api_url']}/a/#{region}/#{asin}?s=#{source}"
 			redirect_to affiliate_url
 		end
