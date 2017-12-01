@@ -4,11 +4,11 @@ module ApplicationHelper
 	include MetaTagsHelper
 
 	def application_name
-    ENV['app_name']
+		"pellect.io"
   end
 
-  def application_description
-    ENV['app_description']
+	def application_description
+		"A post on a fine book a day."
   end
 
 	def profile_image_tag(user, size, clazz='')

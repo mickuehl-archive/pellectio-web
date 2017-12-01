@@ -6,7 +6,7 @@ class SearchService
 	attr_reader :connection
 
 	def initialize
-		@connection = OpenSaas::Connection.new(ENV['backend_api_url'], {})
+		@connection = OpenSaas::Connection.new(Rails.application.secrets.backend_api_url, {})
 	end
 
 	def search(query, opts = {})

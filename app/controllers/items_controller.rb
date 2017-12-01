@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
 			@related = @results['related']
 			render :show
 		else
-			affiliate_url = "#{ENV['backend_api_url']}/a/#{region}/#{asin}?s=#{source}"
+			affiliate_url = "#{Rails.application.secrets.backend_api_url}/a/#{region}/#{asin}?s=#{source}"
 			redirect_to affiliate_url
 		end
 
