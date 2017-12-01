@@ -29,3 +29,5 @@ application.yml
 
 # Ignore all the Vagrant stuff
 .vagrant
+/public/packs
+/node_modules

@@ -11,8 +11,6 @@ smtp_provider_password: admin
 admin_name: admin
 admin_email: admin@example.com
 admin_password: changeme
-mailchimp_api_key: 12345
-mailchimp_list_id: 67890
 ga_property_id: 'UA-xxx-1'
 
 development:
