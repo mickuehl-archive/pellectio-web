@@ -10,12 +10,6 @@ Rails.application.routes.draw do
   # redirect to Amazon
   get '/a/:region/:asin', :to => 'items#affiliate'
 
-  # subscribe to the email list
-  post 'subscribe', to: 'landing#subscribe'
-  direct :subscribe do
-    { controller: 'landing', action: 'subscribe' }
-  end
-
   # sitemap.xml
   get 'sitemap.txt', :to => 'sitemap#index'
 

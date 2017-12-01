@@ -3,7 +3,7 @@ module MetaTagsHelper
 
 	def og_html(url, type, title, description, image)
 		og = <<-EOF
-			<meta property='fb:app_id' content='#{ENV['fb_app_id']}' />
+			<meta property='fb:app_id' content='#{Rails.application.secrets.fb_app_id}' />
 			<meta property='og:url' content='#{url}' />
 			<meta property='og:type' content='#{type}' />
 			<meta property='og:title' content='#{title}' />
@@ -21,7 +21,7 @@ module MetaTagsHelper
 
 	def fb_meta_tags(item)
 		#affiliate_url = "https://www.amazon.de/dp/#{item[:id]}/?tag=#{ENV['amzn_partner_id']}"
-		url = "#{ENV['base_url']}/a/#{item['region']}/#{item['asin']}"
+		url = "#{Rails.application.secrets.base_url}/a/#{item['region']}/#{item['asin']}"
 		og_html url, 'book', item['title'], item['summary'], item['image']
 	end
 

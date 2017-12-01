@@ -10,7 +10,7 @@ class SitemapController < ApplicationController
 
 		sitemap = ""
 		@feed.each do |feed|
-			sitemap = sitemap + "#{ENV['base_url']}/i/#{feed['region']}/#{feed['asin']}\n"
+			sitemap = sitemap + "#{Rails.application.secrets.base_url}/i/#{feed['region']}/#{feed['asin']}\n"
 		end
 
 		render plain: sitemap
