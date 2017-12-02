@@ -84,3 +84,6 @@ Deploy the application
 	gem install rails -v 5.1.0 --no-document
 
 	rails new saas-starter-app --webpack=react --skip-turbolinks --no-rc --database=postgresql
+
+
+docker run -d -e GA_PROPERTY_ID='UA-86850607-1' -e SECRET_KEY_BASE='494b8d5f1400d8143efb37aa11945ad9f04d863bec808d9d052b881ddc47ec2516b4ee62d0d402e5d133cf3c0527813a3dcfacf33c6600d80d70b99eee9387c7' -e FB_APP_ID="147721255272694" -e RAILS_ENV="development" -e RACK_ENV="development" -p 5000:5000 ratchetcc/pellectio-web
